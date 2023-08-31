@@ -15,7 +15,11 @@ window.addEventListener("load", function() {
   form.addEventListener("submit", function(event) {
     event.preventDefault();
     const inputs = [document.querySelector("#fav2").value, document.querySelector("#fav1").value, document.querySelector("#fav3").value]
+    console.log(inputs)
 
-    addInputList(inputs);
+    if (!inputs.includes('')) {
+      addInputList(inputs)
+      form.reset();
+    }
   });
 });
